@@ -39,3 +39,21 @@
     outline-color: var(--primary);
     border-radius: 8px;
 }
+
+.card {
+    margin-top: 20px;
+}
+
+.cardItem {
+    width: 100%;
+    padding: 20px;
+    color: var(--white);
+    border: 1px solid var(--border);
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.cardItem p {
+    font-size: 18px;
+    text-transform: uppercase;
+}
