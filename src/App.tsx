@@ -1,14 +1,10 @@
 import { useState } from "react";
-
+import { data } from "./constants";
 import styles from "./home.module.css";
-import { IData } from "./interfaces";
+
 const App = (): JSX.Element => {
 
-  const data: IData[] = [
-    {title: "Name1", id: 1, description: "Description1"},
-    {title: "Name2", id: 2, description: "Description2"},
-    {title: "Name3", id: 3, description: "Description3"}
-  ];
+  
 
   const [title, setTitle] = useState <string>();
 
@@ -18,9 +14,20 @@ const App = (): JSX.Element => {
   const handleSubmit = (): void => {
     if(!title?.length) return;
 
+    const newData = {
+      title: title,
+      id: new Date().getTime(),
+      description: "description"
+    }
+
+    setArr([...arr, newData])
     setTitle('');
   }
 
+  const deleteItem = (id: number): void => {
+      const newData = arr.filter(item => item.id != id) 
+      setArr(newData)
+  }
   return (
     <div className={styles.todo}>
       <h1 className={styles.title}>App Todo</h1>
@@ -33,6 +40,10 @@ const App = (): JSX.Element => {
           arr.map((item) => (
               <div key={item.id} className={styles.cardItem}>
                 <p>{ item.title }</p>
+
+                <div className={styles.delBtn}>
+                  <button onClick={() => deleteItem(item.id)}>Delete</button>
+                </div>
               </div>
           ))
         }
