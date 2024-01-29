@@ -6,9 +6,10 @@ const App = (): JSX.Element => {
   return (
     <div className={styles.todo}>
       <h1 className={styles.title}>App Todo</h1>
-
-        <button className={styles.button}>Add Todo</button>
-    
+      
+      <input type="text" placeholder="Enter to" className={styles.input}/>
+      <button className={styles.button}>Add Todo</button>
+      
     </div>
   )
 }

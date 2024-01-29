@@ -23,8 +23,19 @@
     border: none;
     cursor: pointer;
     transition: all .5s;
+    margin-top: 20px; 
 }
 
 .button:active {
     transform: translateY(-20px);
+}
+
+.input {
+    display: block;
+    
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    outline-color: var(--primary);
+    border-radius: 8px;
 }
